@@ -24,7 +24,8 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var signUpBtn: UIScrollView!
+    
+    @IBOutlet weak var signUpBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
     
     var scrollViewHeight : CGFloat = 0
@@ -54,6 +55,23 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         avaTap.numberOfTapsRequired = 1
         avaImg.userInteractionEnabled = true
         avaImg.addGestureRecognizer(avaTap)
+        
+        // alignment
+        avaImg.frame = CGRectMake(self.view.frame.size.width / 2 - 40, 40, 80, 80)
+        usernameTxt.frame = CGRectMake(10, avaImg.frame.origin.y + 90, self.view.frame.size.width - 20, 30)
+        passwordTxt.frame = CGRectMake(10, usernameTxt.frame.origin.y + 40, self.view.frame.size.width - 20, 30)
+        repeatPassword.frame = CGRectMake(10, passwordTxt.frame.origin.y + 40, self.view.frame.size.width - 20, 30)
+        emailTxt.frame = CGRectMake(10, repeatPassword.frame.origin.y + 60, self.view.frame.size.width - 20, 30)
+        fullnameTxt.frame = CGRectMake(10, emailTxt.frame.origin.y + 40, self.view.frame.size.width - 20, 30)
+        bioTxt.frame = CGRectMake(10, fullnameTxt.frame.origin.y + 40, self.view.frame.size.width - 20, 30)
+        webTxt.frame = CGRectMake(10, bioTxt.frame.origin.y + 40, self.view.frame.size.width - 20, 30)
+        signUpBtn.frame = CGRectMake(20, webTxt.frame.origin.y + 50, self.view.frame.size.width / 4, 30)
+        cancelBtn.frame = CGRectMake(self.view.frame.size.width - self.view.frame.size.width / 4 - 20, signUpBtn.frame.origin.y, self.view.frame.size.width / 4, 30)
+        
+        let bg = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
+        bg.image = UIImage(named: "background.jpg")
+        bg.layer.zPosition = -1
+        self.view.addSubview(bg)
     }
     
     func loadImg(recognizer: UITapGestureRecognizer) {
@@ -160,8 +178,23 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             
             if success {
                 print("registered")
+                
+                // remember logged user
+                NSUserDefaults.standardUserDefaults().setObject(user.username, forKey: "username")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                
+                // call login func from AppDelegate.swift class and open home if login success
+                let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.login()
+                
             } else {
-                print(error?.localizedDescription)
+             
+                // show alert
+                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+                let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+                alert.addAction(ok)
+                
+                self.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }
@@ -169,5 +202,8 @@ class signUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     @IBAction func cancelBtn_click(sender: AnyObject) {
         
         print("cancel")
+        
+        self.view.endEditing(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

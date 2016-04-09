@@ -26,6 +26,11 @@
 		2060861D1CB5F53C00EA00E3 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060861C1CB5F53C00EA00E3 /* signInVC.swift */; };
 		2060861F1CB5F56900EA00E3 /* signUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060861E1CB5F56900EA00E3 /* signUpVC.swift */; };
 		206086211CB5F57F00EA00E3 /* resetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206086201CB5F57F00EA00E3 /* resetPasswordVC.swift */; };
+		206086241CB6734700EA00E3 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 206086231CB6734700EA00E3 /* Pacifico.ttf */; };
+		206086261CB675B200EA00E3 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 206086251CB675B200EA00E3 /* background.jpg */; };
+		20A1734E1CB9818C0097AACB /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A1734D1CB9818C0097AACB /* homeVC.swift */; };
+		20A173501CB981D10097AACB /* headerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A1734F1CB981D10097AACB /* headerView.swift */; };
+		20A173521CB985BB0097AACB /* pictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A173511CB985BB0097AACB /* pictureCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,11 @@
 		2060861C1CB5F53C00EA00E3 /* signInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
 		2060861E1CB5F56900EA00E3 /* signUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpVC.swift; sourceTree = "<group>"; };
 		206086201CB5F57F00EA00E3 /* resetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPasswordVC.swift; sourceTree = "<group>"; };
+		206086231CB6734700EA00E3 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		206086251CB675B200EA00E3 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		20A1734D1CB9818C0097AACB /* homeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
+		20A1734F1CB981D10097AACB /* headerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headerView.swift; sourceTree = "<group>"; };
+		20A173511CB985BB0097AACB /* pictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pictureCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +112,12 @@
 				206085F81CB5EBAE00EA00E3 /* Assets.xcassets */,
 				206085FA1CB5EBAE00EA00E3 /* LaunchScreen.storyboard */,
 				206085FD1CB5EBAE00EA00E3 /* Info.plist */,
+				206086251CB675B200EA00E3 /* background.jpg */,
+				206086231CB6734700EA00E3 /* Pacifico.ttf */,
 				2060861B1CB5EDA000EA00E3 /* Frameworks */,
+				20A1734D1CB9818C0097AACB /* homeVC.swift */,
+				20A1734F1CB981D10097AACB /* headerView.swift */,
+				20A173511CB985BB0097AACB /* pictureCell.swift */,
 			);
 			path = Instragram;
 			sourceTree = "<group>";
@@ -186,7 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				206085FC1CB5EBAE00EA00E3 /* LaunchScreen.storyboard in Resources */,
+				206086261CB675B200EA00E3 /* background.jpg in Resources */,
 				206085F91CB5EBAE00EA00E3 /* Assets.xcassets in Resources */,
+				206086241CB6734700EA00E3 /* Pacifico.ttf in Resources */,
 				206085F71CB5EBAE00EA00E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,10 +215,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A173521CB985BB0097AACB /* pictureCell.swift in Sources */,
 				2060861F1CB5F56900EA00E3 /* signUpVC.swift in Sources */,
 				2060861D1CB5F53C00EA00E3 /* signInVC.swift in Sources */,
+				20A1734E1CB9818C0097AACB /* homeVC.swift in Sources */,
 				206085F21CB5EBAE00EA00E3 /* AppDelegate.swift in Sources */,
 				206086211CB5F57F00EA00E3 /* resetPasswordVC.swift in Sources */,
+				20A173501CB981D10097AACB /* headerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +381,7 @@
 				206086021CB5EBAE00EA00E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

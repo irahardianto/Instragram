@@ -35,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print("Object has been saved.")
 //        }
         
+        // call login
+        login()
+        
         return true
     }
 
@@ -59,7 +62,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func login () {
+        
+        // remember user's login info
+        let username: String? = NSUserDefaults.standardUserDefaults().stringForKey("username")
+        
+        if username != nil {
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let myTabBar = storyboard.instantiateViewControllerWithIdentifier("tabBar") as! UITabBarController
+            window?.rootViewController = myTabBar
+        }
+    }
+    
 }
 
